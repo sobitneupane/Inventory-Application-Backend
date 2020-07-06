@@ -1,1 +1,1 @@
-web: gunicorn taratraders.wsgi --log-file -
+web: gunicorn inventory_project.wsgi --log-file -
