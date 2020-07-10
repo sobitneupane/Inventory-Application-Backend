@@ -96,13 +96,13 @@ class PlywoodViewSet(viewsets.ModelViewSet):
     '''
     Model: Plywood
     '''
-    queryset = Plywood.objects.select_related().all()
+    queryset = Plywood.objects.select_related().all().order_by("size")
     serializer_class = PlywoodSerializer
     filter_backends = [SearchFilter]
     search_fields = ['thickness']
 
     def get_queryset(self):
-        queryset = Plywood.objects.select_related().all()
+        queryset = Plywood.objects.select_related().all().order_by("size")
         thickness = self.request.query_params.get('thickness', None)
         if thickness is not None:
             queryset = queryset.filter(thickness=thickness)
@@ -113,13 +113,13 @@ class BeetViewSet(viewsets.ModelViewSet):
     '''
     Model: Beet
     '''
-    queryset = Beet.objects.all()
+    queryset = Beet.objects.all().order_by("size")
     serializer_class = BeetSerializer
     filter_backends = [SearchFilter]
     search_fields = ['name']
 
     def get_queryset(self):
-        queryset = Beet.objects.all()
+        queryset = Beet.objects.all().order_by("size")
         name = self.request.query_params.get('name', None)
         if name is not None:
             queryset = queryset.filter(name=name)
@@ -130,13 +130,13 @@ class WaterProofViewSet(viewsets.ModelViewSet):
     '''
     Model: WaterProof
     '''
-    queryset = WaterProof.objects.all()
+    queryset = WaterProof.objects.all().order_by("size")
     serializer_class = WaterProofSerializer
     filter_backends = [SearchFilter]
     search_fields = ['thickness']
 
     def get_queryset(self):
-        queryset = WaterProof.objects.all()
+        queryset = WaterProof.objects.all().order_by("size")
         thickness = self.request.query_params.get('thickness', None)
         if thickness is not None:
             queryset = queryset.filter(thickness=thickness)
@@ -147,13 +147,13 @@ class OthersViewSet(viewsets.ModelViewSet):
     '''
     Model: Others
     '''
-    queryset = Others.objects.all()
+    queryset = Others.objects.all().order_by("size")
     serializer_class = OthersSerializer
     filter_backends = [SearchFilter]
     search_fields = ['name']
 
     def get_queryset(self):
-        queryset = Others.objects.all()
+        queryset = Others.objects.all().order_by("size")
         name = self.request.query_params.get('name', None)
         if name is not None:
             queryset = queryset.filter(name=name)

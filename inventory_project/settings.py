@@ -25,7 +25,7 @@ SECRET_KEY = '7l&@ug3n-y3*w_as%th2b#jjds1owhi_j9g-_c9yb-mt7q66c5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['taratraders.herokuapp.com']
+ALLOWED_HOSTS = ['taratraders.herokuapp.com', '192.168.1.68']
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 52428800
 # Application definition
